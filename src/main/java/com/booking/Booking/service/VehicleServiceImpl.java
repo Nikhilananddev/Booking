@@ -16,10 +16,8 @@ import java.util.List;
 public class VehicleServiceImpl implements VehicleService {
 
     static Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
-
     @Autowired
     VehicleRepositoryService vehicleRepositoryService;
-
 
     @Override
     public Response getTypesVehicleWheel() {
@@ -36,8 +34,6 @@ public class VehicleServiceImpl implements VehicleService {
         Response<Integer> listResponse = new Response<>(getVehicleWheelResponse);
 
         return listResponse;
-
-
     }
 
     @Override

@@ -7,6 +7,5 @@ import com.booking.Booking.exchange.Response;
 public interface BookingService {
 
     BookingResponse addBooking(BookingRequest bookingRequest);
-
     Response getAllBooking();
 }

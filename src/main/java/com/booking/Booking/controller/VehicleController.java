@@ -15,10 +15,8 @@ public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
 
-
     @GetMapping("/getWheel")
     public ResponseEntity<Response> getWheel() {
-
 
         Response getWheelResponse = vehicleService.getTypesVehicleWheel();
 
@@ -45,6 +43,7 @@ public class VehicleController {
 
     @GetMapping("/byType/{type}")
     public ResponseEntity<Response> getVehiclesCategoryByType(@PathVariable String type) {
+
         Response getVehiclesCategorResponse = vehicleService.getVehicleCategory(type);
 
         if (getVehiclesCategorResponse != null) {
@@ -59,6 +58,7 @@ public class VehicleController {
     public ResponseEntity<Response> getVehicles(
             @PathVariable String type,
             @PathVariable String category) {
+
         Response getVehiclesResponse = vehicleService.getVehicle(type, category);
 
         if (getVehiclesResponse != null) {

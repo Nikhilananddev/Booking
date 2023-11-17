@@ -17,10 +17,8 @@ import java.util.List;
 @Service
 public class BookingServiceImpl implements BookingService {
     static Logger logger = LoggerFactory.getLogger(BookingServiceImpl.class);
-
     @Autowired
     BookingRepositoryService bookingRepositoryService;
-
 
     @Override
     public BookingResponse addBooking(BookingRequest bookingRequest) {

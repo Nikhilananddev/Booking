@@ -14,24 +14,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/vehicles")
 public class BookingController {
 
-
     @Autowired
     BookingService bookingService;
-
 
     @PostMapping("/bookMyVehicle")
     public ResponseEntity<BookingResponse> bookVehicle(@RequestBody BookingRequest bookingRequest) {
 
-
             BookingResponse bookingResponse = bookingService.addBooking(bookingRequest);
-
 
             if (bookingResponse.getBooking()!=null)
             {
                 return ResponseEntity.ok().body(bookingResponse);
 
             }
-
 
         return ResponseEntity.badRequest().body(null);
 

@@ -24,7 +24,6 @@ public class BookingRepositoryServiceImpl implements BookingRepositoryService {
     @Autowired
     BookingRepository bookingRepository;
 
-
     @Autowired
     private Provider<ModelMapper> modelMapperProvider;
 
@@ -45,7 +44,6 @@ public class BookingRepositoryServiceImpl implements BookingRepositoryService {
             booking = modelMapper.map(bookingEntity, Booking.class);
         } else
             throw new VehicleNotFoundException("Vehicle already book or Vehicle not found  vehicle Id");
-
 
         return booking;
     }

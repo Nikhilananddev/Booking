@@ -79,7 +79,6 @@ public class VehicleRepositoryServiceImpl implements VehicleRepositoryService {
             }
         }
 
-
         return vehicles;
 
 
