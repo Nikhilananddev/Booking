@@ -14,13 +14,13 @@ Before you begin, ensure you have the following installed:
 
 # Tech Stack:
 
-Java,
-Spring Boot,
-MongoDB,
-Lombok,
-Model Mapper
-Docker 
-Docker Compose
-Thank you,
-
+- Java
+- Spring Boot
+- MongoDB
+- Lombok
+- Model Mapper
+- Docker 
+- Docker Compose
+  
+# Thank you,
 # Nikhil Anand
