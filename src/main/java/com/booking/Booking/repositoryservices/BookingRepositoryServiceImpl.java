@@ -33,7 +33,7 @@ public class BookingRepositoryServiceImpl implements BookingRepositoryService {
 
         ModelMapper modelMapper = modelMapperProvider.get();
         Booking booking = new Booking();
-        Optional<VehicleEntity> vehicleEntity = vehicleRepository.findById(vehicleId);
+        Optional<VehicleEntity> vehicleEntity = vehicleRepository.findByIdAndIdNotInBooking(vehicleId);
 
         BookingEntity bookingEntity = new BookingEntity();
 
@@ -44,7 +44,7 @@ public class BookingRepositoryServiceImpl implements BookingRepositoryService {
             bookingEntity = bookingRepository.save(bookingEntity);
             booking = modelMapper.map(bookingEntity, Booking.class);
         } else
-            throw new VehicleNotFoundException("VehicleNotFoundException by  vehicle Id");
+            throw new VehicleNotFoundException("Vehicle already book or Vehicle not found  vehicle Id");
 
 
         return booking;

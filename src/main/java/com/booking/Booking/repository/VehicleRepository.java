@@ -20,11 +20,15 @@ public interface VehicleRepository extends JpaRepository<VehicleEntity, Long> {
     @Query(value = "SELECT DISTINCT v.wheelCount FROM  VehicleEntity v")
     Optional<List<Integer>> findDistinctTypeWheel();
 
+
     @Query("SELECT DISTINCT v FROM VehicleEntity v " +
             "WHERE UPPER(v.type) = UPPER(:type) AND UPPER(v.category) = UPPER(:category) " +
             "AND v.id NOT IN (SELECT DISTINCT b.vehicle.id FROM BookingEntity b)")
     Optional<List<VehicleEntity>> findDistinctAvailableVehicles(
             @Param("type") String type,
             @Param("category") String category);
+
+    @Query("SELECT v FROM VehicleEntity v WHERE v.id = :vehicleId AND v.id NOT IN (SELECT b.vehicle.id FROM BookingEntity b)")
+    Optional<VehicleEntity> findByIdAndIdNotInBooking(@Param("vehicleId") Long vehicleId);
 
 }
