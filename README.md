@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed:
 
 - Java
 - Spring Boot
-- MongoDB
+- PostgreSQL
 - Lombok
 - Model Mapper
 - Docker 
